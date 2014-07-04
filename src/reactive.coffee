@@ -755,6 +755,8 @@ rxFactory = (_, $) ->
               arg1 instanceof ObsCell or
               arg1 instanceof ObsArray
             [{}, arg1]
+          else if _.isFunction(arg1) and not arg2?
+            [{}, bind(arg1)]
           else
             [arg1, null]
 
